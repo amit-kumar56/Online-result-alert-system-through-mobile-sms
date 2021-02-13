@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SIGNUP</title>	
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script type = "text/javascript" src = "{{ url_for('static', filename = 'hello.js') }}" ></script>
+</head>
+<body>
+    <a href="/"><button type="button" class="btn btn-primary " style="width: 70px;height:70px;border-radius: 0px 0px 25px 0px;font-size: 18px;">Home</button></a>
+    <div class="container">
+        <div class="jumbotron" style="margin: 0px;border-radius:25px;">
+            <h1>Registration</h1>
+            <form action="/signup" method="POST" class="was-validated">
+                <div class="form-group">
+                              <label for="username" style="font-size: 20px;">Username</label>
+                              <input type="text" class="form-control" name="Username" id="username"  required>
+                              <div class="valid-feedback">Valid.</div>
+                              <div class="invalid-feedback">Enter Valid Username.</div>
+                            {% if flag == 6 %}
+                            {% with messages = get_flashed_messages() %}  
+                                {% if messages %}  
+                                    {% for message in messages %}  
+                                        <p style="color: red;">{{ message }}</p>  
+                                    {% endfor %}  
+                                {% endif %}  
+                            {% endwith %} 
+                            {% endif %}
+                </div>
+                <div class="form-group">
+                    <label for="username" style="font-size: 20px;">Name</label>
+                    <input type="text" class="form-control" name="Name"  required>
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Enter a valid name.</div>
+                </div>
+                <div class="form-group">
+                            <label for="trade" style="font-size: 20px;">Trade</label>
+                            <select class="form-control"  name="Trade">
+                              <option>B.Tech</option>
+                              <option>B.Arch</option>
+                              <option>M.Tech</option>
+                              <option>M.Sc</option>
+                              <option>MBA</option>
+                            </select>
+                </div>
+                <div class="form-group">
+                        <label for="department" style="font-size: 20px;">Department</label>
+                        <select class="form-control" id="department" name="Department">
+                               <option>Computer Science & Engineering</option>
+                                <option>Civil Engineering</option>>
+                                <option>Electronics and Communication Engineering</option>>
+                                <option>Mechanical Engineering</option>>
+                                <option>Chemical Engineering</option>>
+                                <option>Material Science and Engineering</option>>
+                                <option>Chemistry</option>>
+                                <option>Mathematics</option>>
+                                <option>Physics</option>>
+                                <option>Humanities</option>>
+                                <option>Management</option>>
+                                <option>Architecture</option>>
+                        </select>
+                </div>
+                <div class="form-group">
+                          <label for="coursecode" style="font-size: 20px;">Course Code</label>
+                          <input type="text" class="form-control" id="coursecode" name="Coursecode"  required>
+                          <div class="valid-feedback">Valid.</div>
+                          <div class="invalid-feedback">Enter Valid Course Code.</div>
+                </div>
+                <div class="form-group">
+                        <label for="semester" style="font-size: 20px;">Semester</label>
+                        <input type="text" class="form-control"  name="Semester"  min = "1" max  = "10" required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Enter a valid semester.</div>
+                </div>
+                <div class="form-group">
+                        <label for="year" style="font-size: 20px;">Year</label>
+                        <input type="number" class="form-control"  name="Year"  required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please enter correct current year . </div>
+                </div>
+                <div class="form-group">
+                        <label for="password" style="font-size: 20px;">Password</label>
+                        <input type="password" class="form-control" id="password" name="Password"  required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Enter Valid Password.</div>
+                </div>
+                <div class="form-group">
+                        <label for="confirmpassword" style="font-size: 20px;">Confirm Password</label>
+                        <input type="password" class="form-control" id="confirmpassword" name="Cpassword"  required >
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Enter Valid Password.</div>
+                        {% if flag != 6 %}
+                        {% with messages = get_flashed_messages() %}  
+                            {% if messages %}  
+                                {% for message in messages %}  
+                                    <p style="color: red;">{{ message }}</p>  
+                                {% endfor %}  
+                            {% endif %}  
+                        {% endwith %} 
+                        {% endif %}
+                </div>
+                <button type="submit" class="btn btn-primary">Register</button>
+              </form>
+        </div>
+    </div>
+    <p style="margin: 30px;text-align: center;color: red;">Maintained by : Computer Centre , NIT Hamirpur [HP]</p>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html> 
+<html>
+<head>
+	<title>SLOGINBTECH</title>	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+    </style>
+</head> 
+<body> 
+    <a href="/"><button type="button" class="btn btn-primary " style="width: 70px;height:70px;border-radius: 0px 0px 25px 0px;font-size: 18px;">Home</button></a>
+    <div class="container">
+        <div class="jumbotron" style="border-radius: 25px;margin:60px;">
+                <h1>Result</h1>
+                <form action="/sloginbtech/{{branch}}" method="POST" class="was-validated ">
+                        <div class="form-group">
+                          <label for="rollno" style="margin-right: 10px;">Roll no</label>
+                          <input type="number" class="form-control" name = "rollno" placeholder="17536" min = {{ min }} max = {{ max }} required>
+                          <div class="valid-feedback">Valid.</div>
+                          <div class="invalid-feedback">Enter Valid Roll no.</div>
+                        </div>
+                        <!--<div class="form-group">
+                            <label for="semester" style="margin-right: 10px;">Semester</label>
+                            <input type="number" class="form-control" name="sem" placeholder="1" min = {{ min_sem }} max = {{ max_sem }}   required>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Enter valid Semester.</div>
+                        </div>-->
+                        {% with messages = get_flashed_messages() %}  
+                            {% if messages %}  
+                                {% for message in messages %}  
+                                    <p style="color: red;">{{ message }}</p>  
+                                {% endfor %}  
+                            {% endif %}  
+                        {% endwith %}  
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+        </div>
+    </div>
+</body>
+</html>

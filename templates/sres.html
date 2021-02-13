@@ -1,0 +1,297 @@
+<!DOCTYPE html> 
+<html>
+<head>
+	<title>RESULT</title>	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+    </style>
+</head> 
+<body>
+    <div class="container">
+        <!--<h1 style="text-align: center;margin-top:20px;margin-bottom:100px;margin-left: 0px;">[ NATIONAL INSTITUTE  OF TECHNOLOGY  HAMIRPUR  HP ] </h1>-->
+        <div class="jumbotron" style="margin-top: 30px;border-radius:20px;">
+                <div class="table-responsive">
+                    <h1 style="margin-bottom: 30px;">Result Details</h1>
+                    <table class="table table-hover">
+                        {% for info in sinfo %}
+                        <tr>
+                            <th>Roll no</th>
+                            <td> {{ info["Roll_no"] }} </td>
+                        </tr>
+                        <tr>
+                            <th>Name</th>
+                            <td> {{ info["Name"] }} </td>
+                        </tr>
+                        <tr>
+                            <th>Fathers Name</th>
+                            <td> {{ info["Fathers_name"] }}  </td>
+                        </tr>
+                        <tr> 
+                            <th>  Mothers Name  </th>
+                            <td> {{ info["Mothers_name"] }}  </td>
+                        </tr>
+                        <tr>
+                            <th>State</th>
+                            <td> {{ info["State"] }}  </td>
+                        </tr>
+                        <tr>
+                            <th>District</th>
+                            <td> {{ info["District"] }} </td>
+                        </tr>
+                        <tr>
+                            <th>Address</th>
+                            <td> {{ info["Address"] }} </td>
+                        </tr>
+                        <tr>
+                            <th>Pin Code</th>
+                            <td> {{ info["Pin_code"] }} </td>
+                        </tr>
+                        <tr>
+                            <th>Nationality</th>
+                            <td> {{ info["Nationality"] }} </td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+
+
+                    {% if len1 %}
+                    <table class="table table-hover">
+                        <h3 style="margin-bottom: 20px;margin-top:30px;">Semester : S01</h3>
+                            <thead>
+                                <td>Subject</td>
+                                <td>Subject Code</td>
+                                <td>Sub Point</td>
+                                <td>Grade</td>
+                                <td>Sub GP</td>
+                            </thead>
+
+                            {% for row in rows1 %}
+                            <tr>
+                               <td>{{row["Subject"]}}</td>
+                               <td>{{row["Code"]}}</td>	
+                               <td>{{row["Sub_Point"]}}</td>
+                               <td>{{row["Grade"]}}</td>
+                               <td>{{row["Sub_GP"]}}</td>
+                            </tr>
+                            {% endfor %}
+                    </table>
+                    <table class="table table-hover">
+                        <tr>
+                            <th>SGPI</th><td>{{s1}}</td>
+                            <th>CGPI</th><td>{{c1}} </td>
+                        </tr>
+                    </table>
+                    {% endif %}
+
+                    {% if len2 %}
+                    <table class="table table-hover">
+                        <h3 style="margin-bottom: 20px;margin-top:30px;">Semester : S02</h3>
+                            <thead>
+                                <td>Subject</td>
+                                <td>Subject Code</td>
+                                <td>Sub Point</td>
+                                <td>Grade</td>
+                                <td>Sub GP</td>
+                            </thead>
+
+                            {% for row in rows2 %}
+                            <tr>
+                               <td>{{row["Subject"]}}</td>
+                               <td>{{row["Code"]}}</td>	
+                               <td>{{row["Sub_Point"]}}</td>
+                               <td>{{row["Grade"]}}</td>
+                               <td>{{row["Sub_GP"]}}</td>
+                            </tr>
+                            {% endfor %}
+                    </table>
+                    <table class="table table-hover">
+                        <tr>
+                            <th>SGPI</th><td>{{s2}}</td>
+                            <th>CGPI</th><td>{{c2}} </td>
+                        </tr>
+                    </table>
+                    {% endif %}
+
+                    {% if len3 %}
+                    <table class="table table-hover">
+                        <h3 style="margin-bottom: 20px;margin-top:30px;">Semester : S03</h3>
+                            <thead>
+                                <td>Subject</td>
+                                <td>Subject Code</td>
+                                <td>Sub Point</td>
+                                <td>Grade</td>
+                                <td>Sub GP</td>
+                            </thead>
+
+                            {% for row in rows3 %}
+                            <tr>
+                               <td>{{row["Subject"]}}</td>
+                               <td>{{row["Code"]}}</td>	
+                               <td>{{row["Sub_Point"]}}</td>
+                               <td>{{row["Grade"]}}</td>
+                               <td>{{row["Sub_GP"]}}</td>
+                            </tr>
+                            {% endfor %}
+                    </table>
+                    <table class="table table-hover">
+                        <tr>
+                            <th>SGPI</th><td>{{s3}} </td>
+                            <th>CGPI</th><td>{{c3}} </td>
+                        </tr>
+                    </table>
+                    {% endif %}
+
+                    {% if len4 %}
+                    <table class="table table-hover">
+                        <h3 style="margin-bottom: 20px;margin-top:30px;">Semester : S04</h3>
+                            <thead>
+                                <td>Subject</td>
+                                <td>Subject Code</td>
+                                <td>Sub Point</td>
+                                <td>Grade</td>
+                                <td>Sub GP</td>
+                            </thead>
+
+                            {% for row in rows4 %}
+                            <tr>
+                               <td>{{row["Subject"]}}</td>
+                               <td>{{row["Code"]}}</td>	
+                               <td>{{row["Sub_Point"]}}</td>
+                               <td>{{row["Grade"]}}</td>
+                               <td>{{row["Sub_GP"]}}</td>
+                            </tr>
+                            {% endfor %}
+                    </table>
+                    <table class="table table-hover">
+                        <tr>
+                            <th>SGPI</th><td>{{s4}} </td>
+                            <th>CGPI</th><td>{{c4}} </td>
+                        </tr>
+                    </table>
+                    {% endif %}
+
+                    {% if len5 %}
+                    <table class="table table-hover">
+                        <h3 style="margin-bottom: 20px;margin-top:30px;">Semester : S05</h3>
+                            <thead>
+                                <td>Subject</td>
+                                <td>Subject Code</td>
+                                <td>Sub Point</td>
+                                <td>Grade</td>
+                                <td>Sub GP</td>
+                            </thead>
+
+                            {% for row in rows5 %}
+                            <tr>
+                               <td>{{row["Subject"]}}</td>
+                               <td>{{row["Code"]}}</td>	
+                               <td>{{row["Sub_Point"]}}</td>
+                               <td>{{row["Grade"]}}</td>
+                               <td>{{row["Sub_GP"]}}</td>
+                            </tr>
+                            {% endfor %}
+                    </table>
+                    <table class="table table-hover">
+                        <tr>
+                            <th>SGPI</th><td>{{s5}} </td>
+                            <th>CGPI</th><td>{{c5}} </td>
+                        </tr>
+                    </table>
+                    {% endif %}
+
+                    {% if len6 %}
+                    <table class="table table-hover">
+                        <h3 style="margin-bottom: 20px;margin-top:30px;">Semester : S06</h3>
+                            <thead>
+                                <td>Subject</td>
+                                <td>Subject Code</td>
+                                <td>Sub Point</td>
+                                <td>Grade</td>
+                                <td>Sub GP</td>
+                            </thead>
+
+                            {% for row in rows6 %}
+                            <tr>
+                               <td>{{row["Subject"]}}</td>
+                               <td>{{row["Code"]}}</td>	
+                               <td>{{row["Sub_Point"]}}</td>
+                               <td>{{row["Grade"]}}</td>
+                               <td>{{row["Sub_GP"]}}</td>
+                            </tr>
+                            {% endfor %}
+                    </table>
+                    <table class="table table-hover">
+                        <tr>
+                            <th>SGPI</th><td>{{s6}}</td>
+                            <th>CGPI</th><td>{{c6}} </td>
+                        </tr>
+                    </table>
+                    {% endif %}
+
+                    {% if len7 %}
+                    <table class="table table-hover">
+                        <h3 style="margin-bottom: 20px;margin-top:30px;">Semester : S07</h3>
+                            <thead>
+                                <td>Subject</td>
+                                <td>Subject Code</td>
+                                <td>Sub Point</td>
+                                <td>Grade</td>
+                                <td>Sub GP</td>
+                            </thead>
+
+                            {% for row in rows7 %}
+                            <tr>
+                               <td>{{row["Subject"]}}</td>
+                               <td>{{row["Code"]}}</td>	
+                               <td>{{row["Sub_Point"]}}</td>
+                               <td>{{row["Grade"]}}</td>
+                               <td>{{row["Sub_GP"]}}</td>
+                            </tr>
+                            {% endfor %}
+                    </table>
+                    <table class="table table-hover">
+                        <tr>
+                            <th>SGPI</th><td>{{s7}}</td>
+                            <th>CGPI</th><td>{{c7}} </td>
+                        </tr>
+                    </table>
+                    {% endif %}
+                    
+                    {% if len8 %}
+                    <table class="table table-hover">
+                        <h3 style="margin-bottom: 20px;margin-top:30px;">Semester : S08</h3>
+                            <thead>
+                                <td>Subject</td>
+                                <td>Subject Code</td>
+                                <td>Sub Point</td>
+                                <td>Grade</td>
+                                <td>Sub GP</td>
+                            </thead>
+
+                            {% for row in rows8 %}
+                            <tr>
+                               <td>{{row["Subject"]}}</td>
+                               <td>{{row["Code"]}}</td>	
+                               <td>{{row["Sub_Point"]}}</td>
+                               <td>{{row["Grade"]}}</td>
+                               <td>{{row["Sub_GP"]}}</td>
+                            </tr>
+                            {% endfor %}
+                    </table>
+                    <table class="table table-hover">
+                        <tr>
+                            <th>SGPI</th><td>{{s8}}</td>
+                            <th>CGPI</th><td>{{c8}} </td>
+                        </tr>
+                    </table>
+                    {% endif %}
+                </div>
+        </div>
+    </div>
+</body>
+</html>

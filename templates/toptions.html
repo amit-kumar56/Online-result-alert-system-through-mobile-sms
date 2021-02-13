@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TOPTIONS</title>	
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/static/ticon.png">
+    <style>
+        .cls{
+            border-radius: 20px;margin-bottom: 35px;
+        }
+    </style>
+</head>
+<body>
+    <a href="/"><button type="button" class="btn btn-primary " style="width: 70px;height:70px;border-radius: 0px 0px 25px 0px;font-size: 18px;">Home</button></a>
+    <div class="container">
+        <div class="jumbotron" style="margin-top: 30px;border-radius: 25px;width: 500px;margin-left: 300px;">
+            <div>
+                <h3 style="text-align: center;margin-bottom:15px;">@{{uname}} </h3>
+                <a href="/personalinformation/{{uname}} "><button type="button" class="btn btn-primary btn-lg btn-block cls">Personal Information</button></a>
+                <a href="/updation/{{uname}} "><button type="button" class="btn btn-primary btn-lg btn-block cls">Updation</button></a>
+                <a href="/changepassword/{{uname}} "><button type="button" class="btn btn-primary btn-lg btn-block cls">Change Password</button></a>
+                {% with messages = get_flashed_messages() %}  
+                    {% if messages %}  
+                        {% for message in messages %}  
+                            <p style="color: red;text-align:center;">{{ message }}</p>  
+                        {% endfor %}  
+                    {% endif %}  
+                {% endwith %} 
+            </div>
+        </div>
+    </div>
+</body>
+</html>

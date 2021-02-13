@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LOGIN</title>	
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+        .cls{
+            border-radius: 25px;margin-top: 40px;height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <a href="/"><button type="button" class="btn btn-primary " style="width: 70px;height:70px;border-radius: 0px 0px 25px 0px;font-size: 18px;">Home</button></a>
+    <div class="container">
+        <div class="jumbotron" style="margin-top: 80px;border-radius: 25px;">
+            <h1 > {{ msg1 }} as @ {{ uname }} </h1>
+            <a href="/toptions/{{uname}}"><button type="button" class="btn btn-success btn-lg btn-block cls">{{ msg2 }}</button></a>
+        </div>
+    </div>
+</body>
+</html>

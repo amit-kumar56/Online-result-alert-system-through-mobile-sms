@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CPWD</title>	
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/static/ticon.png">
+    <style>
+            .cls{
+                border-radius: 25px;margin-top: 40px;height: 50px;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+            <div class="jumbotron" style="margin-top: 80px;border-radius: 25px;">
+                <h1 > Password changed successfully @ {{ uname }} </h1>
+                <a href="/toptions/{{uname}}"><button type="button" class="btn btn-success btn-lg btn-block cls">Go to Main Page</button></a>
+            </div>
+    </div>
+</body>
+</html>

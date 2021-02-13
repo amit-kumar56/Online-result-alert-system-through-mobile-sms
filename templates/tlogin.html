@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TLOGIN</title>	
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+    </style>
+</head>
+<body>
+    <a href="/"><button type="button" class="btn btn-primary " style="width: 70px;height:70px;border-radius: 0px 0px 25px 0px;font-size: 18px;">Home</button></a>
+    <div class="container">
+        <div class="jumbotron" style="border-radius: 20px;margin-top: 50px;">
+            <h1>Log In</h1>
+            <form action = "/tlogin"  method="POST" class = "was-validated" >
+                    <div class="form-group">
+                            <label for="username" style="font-size: 20px;">Username</label>
+                            <input type="text" class="form-control" id="username" name="Username"  required>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Enter Valid Username.</div>
+                            {% if flag == 1 %}
+                            {% with messages = get_flashed_messages() %}  
+                                {% if messages %}  
+                                    {% for message in messages %}  
+                                        <p style="color: red;">{{ message }}</p>  
+                                    {% endfor %}  
+                                {% endif %}  
+                            {% endwith %} 
+                            {% endif %}
+                    </div>
+                    <div class="form-group">
+                            <label for="password" style="font-size: 20px;">Password</label>
+                            <input type="password" class="form-control" id="password" name="Password"  required>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Enter Valid Password.</div> 
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

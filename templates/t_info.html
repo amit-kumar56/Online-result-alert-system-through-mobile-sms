@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TINFO</title>	
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <a href="/toptions/{{uname}} "><button type="button" class="btn btn-primary " style="width: 70px;height:70px;border-radius: 0px 0px 25px 0px;font-size: 18px;">Main</button></a>
+    <div class="container">
+        <div class="jumbotron" style="margin-top: 30px;border-radius:20px;">
+            <div class="table-responsive">
+                <h1 style="margin-bottom: 30px;">@{{uname}}</h1>
+                <table class="table table-hover">
+                    {% for info in rows %}
+                    <tr>
+                        <th>Name</th>
+                        <td> {{ info["Name"] }} </td>
+                    </tr>
+                    <tr>
+                        <th>Trade</th>
+                        <td> {{ info["trade"] }}  </td>
+                    </tr>
+                    <tr>
+                        <th>  Department </th>
+                        <td> {{ info["department"] }}  </td>
+                    </tr>
+                    <tr>
+                        <th>Course  Code</th>
+                        <td> {{ info["course_code"] }} </td>
+                    </tr>
+                    <tr>
+                        <th>Semester</th>
+                        <td> {{ info["semester"] }} </td>
+                    </tr>
+                    <tr>
+                        <th>Year</th>
+                        <td> {{ info["year"] }} </td>
+                    </tr>
+                    <tr>
+                        <th>Password</th>
+                        <td> {{ info["password"] }} </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+        </div>
+    </div>
+</body>
+</html>
